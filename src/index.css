@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-chili-50: #fff5f0;
+  --color-chili-100: #ffe8dc;
+  --color-chili-200: #ffc9ae;
+  --color-chili-300: #ff9f76;
+  --color-chili-400: #ff6e3c;
+  --color-chili-500: #e84a1a;
+  --color-chili-600: #c43a11;
+  --color-chili-700: #9e2d0b;
+  --color-chili-800: #7b2209;
+  --color-chili-900: #641c09;
+
+  --color-avocado-50: #f3faf0;
+  --color-avocado-100: #e0f4d8;
+  --color-avocado-200: #b9e6a5;
+  --color-avocado-300: #88cf6b;
+  --color-avocado-400: #5ab33f;
+  --color-avocado-500: #3d9228;
+  --color-avocado-600: #2f7420;
+  --color-avocado-700: #265c1c;
+  --color-avocado-800: #1f4818;
+  --color-avocado-900: #1a3c15;
+
+  --color-maiz-50: #fffbeb;
+  --color-maiz-100: #fef3c7;
+  --color-maiz-200: #fde68a;
+  --color-maiz-300: #fcd34d;
+  --color-maiz-400: #fbbf24;
+  --color-maiz-500: #f59e0b;
+  --color-maiz-600: #d97706;
+  --color-maiz-700: #b45309;
+  --color-maiz-800: #92400e;
+  --color-maiz-900: #78350f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fdf8f4;
+  color: #1a1008;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
