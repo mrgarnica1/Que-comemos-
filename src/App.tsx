@@ -5,6 +5,7 @@ import { FridgePage } from './pages/FridgePage';
 import { MealPlannerPage } from './pages/MealPlannerPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { AddRecipeModal } from './components/AddRecipeModal';
+import { ImportRecipeModal } from './components/ImportRecipeModal';
 import { ForkKnife, Snowflake, CalendarBlank, Heart } from '@phosphor-icons/react';
 
 type Tab = 'recipes' | 'fridge' | 'planner' | 'favorites';
@@ -19,6 +20,7 @@ const NAV_ITEMS = [
 export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>('recipes');
   const [showAddRecipe, setShowAddRecipe] = useState(false);
+  const [showImportRecipe, setShowImportRecipe] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#f8f3eb]">
@@ -26,6 +28,7 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onAddRecipe={() => setShowAddRecipe(true)}
+        onImportRecipe={() => setShowImportRecipe(true)}
       />
 
       <main>
@@ -61,6 +64,9 @@ export default function App() {
 
       {showAddRecipe && (
         <AddRecipeModal onClose={() => setShowAddRecipe(false)} />
+      )}
+      {showImportRecipe && (
+        <ImportRecipeModal onClose={() => setShowImportRecipe(false)} />
       )}
     </div>
   );

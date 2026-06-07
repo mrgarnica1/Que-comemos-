@@ -17,7 +17,7 @@ export function RecipesPage() {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | 'all'>('all');
   const [spiceFilter, setSpiceFilter] = useState<number | 'all'>('all');
-  const [sortBy, setSortBy] = useState<SortOption>('rating');
+  const [sortBy, setSortBy] = useState<SortOption>('difficulty-asc');
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
   const [editRecipe, setEditRecipe] = useState<Recipe | null>(null);
   const [showFilters, setShowFilters] = useState(false);
@@ -57,7 +57,7 @@ export function RecipesPage() {
   const activeFilterCount = [
     selectedDifficulty !== 'all',
     spiceFilter !== 'all',
-    sortBy !== 'rating',
+    sortBy !== 'difficulty-asc',
   ].filter(Boolean).length;
 
   // ── Full-page recipe detail ──────────────────────────────
@@ -177,7 +177,7 @@ export function RecipesPage() {
 
           {activeFilterCount > 0 && (
             <button
-              onClick={() => { setSelectedDifficulty('all'); setSpiceFilter('all'); setSortBy('rating'); }}
+              onClick={() => { setSelectedDifficulty('all'); setSpiceFilter('all'); setSortBy('difficulty-asc'); }}
               className="text-xs text-red-500 hover:text-red-700 font-medium"
             >
               Clear all filters
