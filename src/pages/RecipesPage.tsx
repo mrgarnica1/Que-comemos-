@@ -91,7 +91,7 @@ export function RecipesPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search recipes, regions, tags..."
-            className="w-full pl-8 pr-8 py-2.5 border border-[#e5dcd0] rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#8fba8f] bg-white text-[#1c1208] placeholder:text-[#9a8570]"
+            className="w-full pl-8 pr-8 py-2.5 border border-[#e5dcd0] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#8fba8f] bg-white text-[#1c1208] placeholder:text-[#9a8570]"
           />
           {search && (
             <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9a8570] hover:text-[#5c4d3c]">
@@ -101,7 +101,7 @@ export function RecipesPage() {
         </div>
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className={`flex items-center gap-1.5 px-3 py-2.5 border rounded-xl text-sm font-medium transition-all flex-shrink-0 ${
+          className={`flex items-center gap-1.5 px-3 py-2.5 border rounded-lg text-sm font-medium transition-all flex-shrink-0 ${
             showFilters || activeFilterCount > 0
               ? 'bg-[#e8f0e8] border-[#c5ddc7] text-[#2d5f30]'
               : 'border-[#e5dcd0] text-[#5c4d3c] hover:border-[#c5ddc7] bg-white'
@@ -119,7 +119,7 @@ export function RecipesPage() {
 
       {/* Filter panel */}
       {showFilters && (
-        <div className="bg-white border border-[#e8f0e8] rounded-2xl p-4 mb-3 animate-fade-in space-y-4">
+        <div className="bg-white border border-[#e8f0e8] rounded-xl p-4 mb-3 animate-fade-in space-y-4">
           <div>
             <label className="text-xs font-semibold text-[#9a8570] uppercase tracking-wider block mb-2">Sort By</label>
             <div className="flex gap-1.5 flex-wrap">

@@ -54,7 +54,7 @@ export function FridgePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#2d7a5f] to-[#1a5c47] rounded-2xl mb-3 shadow-lg">
+        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#2d7a5f] to-[#1a5c47] rounded-xl mb-3 shadow-lg">
           <Snowflake size={28} className="text-white" />
         </div>
         <h1 className="text-3xl font-bold text-[#1c1208] mb-1">What's In My Fridge?</h1>
@@ -66,7 +66,7 @@ export function FridgePage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: Topping selector */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-2xl border border-[#e5dcd0] shadow-sm p-5 sticky top-24">
+          <div className="bg-white rounded-xl border border-[#e5dcd0] shadow-sm p-5 sticky top-24">
             <h2 className="font-semibold text-[#1c1208] mb-1 flex items-center gap-2">
               <span>🧅</span> Select your toppings
             </h2>
@@ -104,11 +104,11 @@ export function FridgePage() {
                 onChange={(e) => setCustomInput(e.target.value)}
                 onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addCustom(); } }}
                 placeholder="Add other ingredient..."
-                className="flex-1 border border-[#e5dcd0] rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#8fba8f] text-[#1c1208] placeholder:text-[#9a8570]"
+                className="flex-1 border border-[#e5dcd0] rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#8fba8f] text-[#1c1208] placeholder:text-[#9a8570]"
               />
               <button
                 onClick={addCustom}
-                className="p-2 bg-[#2d5f30] text-white rounded-xl hover:bg-[#245028] transition-colors"
+                className="p-2 bg-[#2d5f30] text-white rounded-lg hover:bg-[#245028] transition-colors"
               >
                 <Plus size={14} />
               </button>
@@ -148,13 +148,13 @@ export function FridgePage() {
         {/* Right: Results */}
         <div className="lg:col-span-2">
           {selectedToppings.length === 0 ? (
-            <div className="text-center py-16 bg-white rounded-2xl border border-dashed border-[#e5dcd0]">
+            <div className="text-center py-16 bg-white rounded-xl border border-dashed border-[#e5dcd0]">
               <div className="text-5xl mb-3">👈</div>
               <p className="text-[#5c4d3c] font-medium">Select toppings to find matching recipes</p>
               <p className="text-[#9a8570] text-sm mt-1">Start by picking what's in your fridge</p>
             </div>
           ) : scoredRecipes.length === 0 ? (
-            <div className="text-center py-16 bg-white rounded-2xl border border-dashed border-[#e5dcd0]">
+            <div className="text-center py-16 bg-white rounded-xl border border-dashed border-[#e5dcd0]">
               <div className="text-5xl mb-3">🤔</div>
               <p className="text-[#5c4d3c] font-medium">No recipes match those toppings</p>
               <p className="text-[#9a8570] text-sm mt-1">Try adding more common toppings like cilantro or lime</p>

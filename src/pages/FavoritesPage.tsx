@@ -18,7 +18,7 @@ export function FavoritesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl mb-3 shadow-lg">
+        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-red-400 to-pink-500 rounded-xl mb-3 shadow-lg">
           <Heart size={28} className="text-white" weight="fill" />
         </div>
         <h1 className="text-3xl font-bold text-[#1c1208] mb-1">My Favorites</h1>
