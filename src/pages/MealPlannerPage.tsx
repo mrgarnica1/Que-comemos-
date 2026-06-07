@@ -31,7 +31,7 @@ function RecipePicker({ day, slot, onClose }: RecipePickerProps) {
       className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div className="bg-white w-full sm:max-w-md sm:rounded-2xl rounded-t-3xl shadow-2xl max-h-[80vh] flex flex-col animate-slide-up">
+      <div className="bg-white w-full sm:max-w-md sm:rounded-xl rounded-t-2xl shadow-2xl max-h-[80vh] flex flex-col animate-slide-up">
         <div className="flex items-center justify-between px-5 py-4 border-b border-[#ede4d8] flex-shrink-0">
           <div>
             <h3 className="font-bold text-[#1c1208] text-base">Pick a recipe</h3>
@@ -46,7 +46,7 @@ function RecipePicker({ day, slot, onClose }: RecipePickerProps) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search recipes..."
-            className="w-full border border-[#e5dcd0] rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8fba8f] text-[#1c1208] placeholder:text-[#9a8570]"
+            className="w-full border border-[#e5dcd0] rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#8fba8f] text-[#1c1208] placeholder:text-[#9a8570]"
             autoFocus
           />
         </div>
@@ -123,7 +123,7 @@ export function MealPlannerPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#4a5c3d] to-[#2d3d28] rounded-2xl mb-3 shadow-lg">
+        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#4a5c3d] to-[#2d3d28] rounded-xl mb-3 shadow-lg">
           <CalendarBlank size={28} className="text-white" weight="fill" />
         </div>
         <h1 className="text-3xl font-bold text-[#1c1208] mb-1">Weekly Meal Planner</h1>
@@ -148,7 +148,7 @@ export function MealPlannerPage() {
           return (
             <div
               key={day}
-              className={`rounded-2xl border ${
+              className={`rounded-xl border ${
                 isWeekend ? 'border-[#d5c9bb] bg-[#f4ede2]/50' : 'border-[#ede4d8] bg-white'
               } shadow-sm overflow-hidden`}
             >
@@ -166,7 +166,7 @@ export function MealPlannerPage() {
                     <div key={slot}>
                       <p className="text-xs text-[#9a8570] font-medium capitalize mb-1 px-1">{slot}</p>
                       {recipe ? (
-                        <div className="group relative rounded-xl bg-white border border-[#e5dcd0] p-2 shadow-sm">
+                        <div className="group relative rounded-lg bg-white border border-[#e5dcd0] p-2 shadow-sm">
                           <button
                             onClick={() => setViewRecipe(recipe)}
                             className="w-full text-left"
@@ -189,7 +189,7 @@ export function MealPlannerPage() {
                       ) : (
                         <button
                           onClick={() => setPicker({ day, slot })}
-                          className="w-full rounded-xl border-2 border-dashed border-[#e5dcd0] hover:border-[#c5ddc7] hover:bg-[#eef3ee] p-3 text-[#9a8570] hover:text-[#2d5f30] transition-all text-xs flex items-center justify-center gap-1"
+                          className="w-full rounded-lg border-2 border-dashed border-[#e5dcd0] hover:border-[#c5ddc7] hover:bg-[#eef3ee] p-3 text-[#9a8570] hover:text-[#2d5f30] transition-all text-xs flex items-center justify-center gap-1"
                         >
                           <ChefHat size={12} />
                           Add meal
@@ -206,7 +206,7 @@ export function MealPlannerPage() {
 
       {/* Shopping list */}
       {shoppingList.length > 0 && (
-        <div className="bg-white rounded-2xl border border-[#e5dcd0] shadow-sm p-6">
+        <div className="bg-white rounded-xl border border-[#e5dcd0] shadow-sm p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-bold text-[#1c1208] flex items-center gap-2">
               <ShoppingCart size={18} className="text-[#2d5f30]" />
