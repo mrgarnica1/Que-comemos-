@@ -27,6 +27,7 @@ export interface Recipe {
   tags: string[];
   isCustom: boolean;
   spiceLevel: 1 | 2 | 3;
+  photo?: string;
 }
 
 export const ALL_TOPPINGS = [
