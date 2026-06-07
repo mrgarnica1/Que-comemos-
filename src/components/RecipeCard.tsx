@@ -1,4 +1,4 @@
-import { Heart, Clock, Star, Flame } from 'lucide-react';
+import { Heart, Star, Clock, Fire } from '@phosphor-icons/react';
 import type { Recipe } from '../data/recipes';
 import { useAppStore } from '../store/useAppStore';
 
@@ -9,9 +9,9 @@ interface Props {
 }
 
 const difficultyColor: Record<string, string> = {
-  Easy:   'bg-green-100 text-green-700',
-  Medium: 'bg-amber-100 text-amber-700',
-  Hard:   'bg-red-100 text-red-700',
+  Easy:   'bg-[#e8f5e8] text-[#2d6e30]',
+  Medium: 'bg-[#fdf3e3] text-[#8b6930]',
+  Hard:   'bg-[#fde8e8] text-[#b83535]',
 };
 
 export function RecipeCard({ recipe, onClick, matchScore }: Props) {
@@ -21,10 +21,10 @@ export function RecipeCard({ recipe, onClick, matchScore }: Props) {
   return (
     <div
       onClick={onClick}
-      className="group bg-white rounded-2xl border border-orange-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all cursor-pointer overflow-hidden animate-fade-in"
+      className="group bg-white rounded-2xl border border-[#e5dcd0] shadow-sm hover:shadow-md hover:border-[#c5ddc7] transition-all cursor-pointer overflow-hidden animate-fade-in"
     >
       {/* Thumbnail */}
-      <div className="relative bg-gradient-to-br from-orange-50 to-amber-50 h-24 flex items-center justify-center select-none overflow-hidden">
+      <div className="relative bg-gradient-to-br from-[#f4ede2] to-[#ede4d4] h-24 flex items-center justify-center select-none overflow-hidden">
         {recipe.photo ? (
           <img
             src={recipe.photo}
@@ -45,7 +45,7 @@ export function RecipeCard({ recipe, onClick, matchScore }: Props) {
           </span>
         )}
         {matchScore !== undefined && matchScore > 0 && (
-          <span className="absolute top-1.5 left-1.5 bg-green-500 text-white text-[10px] font-semibold px-1.5 py-0.5 rounded-full">
+          <span className="absolute top-1.5 left-1.5 bg-[#2d5f30] text-white text-[10px] font-semibold px-1.5 py-0.5 rounded-full">
             {matchScore} match
           </span>
         )}
@@ -54,35 +54,40 @@ export function RecipeCard({ recipe, onClick, matchScore }: Props) {
         <button
           onClick={(e) => { e.stopPropagation(); toggleFavorite(recipe.id); }}
           className={`absolute top-1.5 right-1.5 p-1 rounded-full transition-all ${
-            fav ? 'bg-red-500 text-white' : 'bg-white/80 text-gray-400 hover:text-red-400'
+            fav ? 'bg-red-500 text-white' : 'bg-white/80 text-[#9a8570] hover:text-red-400'
           }`}
         >
-          <Heart size={12} fill={fav ? 'currentColor' : 'none'} />
+          <Heart size={12} weight={fav ? 'fill' : 'regular'} />
         </button>
       </div>
 
       {/* Content */}
       <div className="p-3">
-        <h3 className="font-bold text-gray-900 text-sm leading-tight group-hover:text-orange-600 transition-colors truncate">
+        <h3 className="font-bold text-[#1c1208] text-sm leading-tight group-hover:text-[#2d5f30] transition-colors truncate">
           {recipe.name}
         </h3>
-        <p className="text-[11px] text-orange-400 italic truncate mb-2">{recipe.spanishName}</p>
+        <p className="text-[11px] text-[#9a8570] italic truncate mb-2">{recipe.spanishName}</p>
 
         <div className="flex items-center justify-between">
           <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${difficultyColor[recipe.difficulty]}`}>
             {recipe.difficulty}
           </span>
           <div className="flex items-center gap-0.5">
-            {[1,2,3].map((i) => (
-              <Flame key={i} size={9} className={recipe.spiceLevel >= i ? 'text-orange-500' : 'text-gray-200'} fill={recipe.spiceLevel >= i ? 'currentColor' : 'none'} />
+            {[1, 2, 3].map((i) => (
+              <Fire
+                key={i}
+                size={9}
+                className={recipe.spiceLevel >= i ? 'text-orange-500' : 'text-[#e5dcd0]'}
+                weight={recipe.spiceLevel >= i ? 'fill' : 'regular'}
+              />
             ))}
           </div>
         </div>
 
-        <div className="flex items-center gap-2 mt-2 text-[11px] text-gray-500">
+        <div className="flex items-center gap-2 mt-2 text-[11px] text-[#9a8570]">
           <div className="flex items-center gap-0.5">
-            <Star size={10} className="text-amber-400" fill="currentColor" />
-            <span className="font-semibold text-gray-700">{recipe.rating}</span>
+            <Star size={10} className="text-amber-400" weight="fill" />
+            <span className="font-semibold text-[#5c4d3c]">{recipe.rating}</span>
           </div>
           <div className="flex items-center gap-0.5">
             <Clock size={10} />
