@@ -21,6 +21,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          VITE_SPOONACULAR_KEY: ${{ secrets.VITE_SPOONACULAR_KEY }}
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
